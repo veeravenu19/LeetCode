@@ -1,12 +1,10 @@
 class Solution:
     def reverseParentheses(self, s: str) -> str:
-        stack = []
-        s = [st for st in s]
-        for i, st in enumerate(s):
-            if st == '(':
-                stack.append(i)
-            elif st == ')':
-                s[stack[-1]:i+1] = s[stack[-1]:i+1][::-1]
-                stack.pop()
-        finals = [st for st in s if st not in ['(', ')']]
-        return ''.join(finals)
+        st = ['']
+        for c in s:
+            if c == '(': st += '',
+            elif c == ')':
+                v = st.pop()[::-1]
+                st[-1] += v
+            else: st[-1] += c
+        return st.pop()
