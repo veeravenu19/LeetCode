@@ -8,8 +8,6 @@ class Solution:
             return 1
         else:
             while n-2!=0:
-                temp=f
-                f=s
-                s=temp+s
+                f,s=s,f+s
                 n-=1
             return f+s
