@@ -1,8 +1,6 @@
 class Solution {
     public void rotate(int[] nums, int k) {
         k = k%nums.length;
-        // if(k > nums.length) return;
-
         int[] SecondArray = Arrays.copyOfRange(nums,nums.length-k,nums.length);
         int[] FirstArray = Arrays.copyOfRange(nums,0,nums.length-k);
 
